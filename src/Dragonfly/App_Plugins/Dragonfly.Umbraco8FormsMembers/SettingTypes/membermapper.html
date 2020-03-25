@@ -1,0 +1,71 @@
+﻿<div ng-controller="UmbracoForms.SettingTypes.MemberMapperController">
+
+    <select ng-model="memtype" ng-options="type.id as type.value for type in memtypes" ng-change="setMemType()">
+        <option value="">-- choose type --</option>
+    </select>
+
+    <table ng-show="memtype">
+        <thead>
+            <tr>
+                <td>Property</td>
+                <td>Field value</td>
+                <td>Static value</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Node name
+                </td>
+                <td>
+                    <select ng-model="nameField" ng-options="field.id as field.value for field in fields" ng-change="setValue()"></select>
+                </td>
+                <td>
+                    <input ng-model="nameStaticValue" type="text" placeholder="Static value" ng-change="setValue()" />
+                </td>
+            </tr>
+        <tr>
+            <td>
+                Login
+            </td>
+            <td>
+                <select ng-model="loginField" ng-options="field.id as field.value for field in fields" ng-change="setValue()"></select>
+            </td>
+            <td>
+                <input ng-model="loginStaticValue" type="text" placeholder="Static value" ng-change="setValue()"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                <select ng-model="emailField" ng-options="field.id as field.value for field in fields" ng-change="setValue()"></select>
+            </td>
+            <td>
+                <input ng-model="emailStaticValue" type="text" placeholder="Static value" ng-change="setValue()"/>
+            </td>
+        </tr>
+            <tr>
+                <td>
+                    Password
+                </td>
+                <td>
+                    <select ng-model="passwordField" ng-options="field.id as field.value for field in fields" ng-change="setValue()"></select>
+                </td>
+                <td>
+                    <input ng-model="passwordStaticValue" type="text" placeholder="Static value" ng-change="setValue()" />
+                </td>
+            </tr>
+            <tr ng-repeat="property in properties">
+                <td>{{property.value}}</td>
+                <td>
+                    <select ng-model="property.field" ng-options="field.id as field.value for field in fields" ng-change="setValue()"></select>
+                </td>
+                <td>
+                    <input type="text" ng-model="property.staticValue" placeholder="Static value" ng-change="setValue()" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

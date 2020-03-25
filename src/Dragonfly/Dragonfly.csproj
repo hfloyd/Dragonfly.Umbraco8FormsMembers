@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Copyright>Heather Floyd [www.HeatherFloyd.com]</Copyright>
+    <RepositoryType>GIT</RepositoryType>
+    <Authors>Heather Floyd</Authors>
+    <Company></Company>
+    <Product>Dragonfly</Product>
+    <Description>Umbraco 8 Forms additions to work with Members.</Description>
+    <PackageProjectUrl>https://github.com/hfloyd/Dragonfly.Umbraco8FormsMembers</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hfloyd/Dragonfly.Umbraco8FormsMembers</RepositoryUrl>
+    <PackageId>Dragonfly.Umbraco8FormsMembers</PackageId>
+	<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+ <ItemGroup>
+<Content Include="App_Plugins/**/*.*">
+      <Pack>true</Pack>
+      <BuildAction>Content</BuildAction>
+      <IncludeInPackage>true</IncludeInPackage>
+      <CopyToOutput>true</CopyToOutput>
+    </Content>
+ </ItemGroup>
+<ItemGroup>
+  <PackageReference Include="UmbracoCms.Core" Version="8.5.5" />
+  <PackageReference Include="UmbracoCms.Web" Version="8.5.5" />
+  <PackageReference Include="UmbracoForms.Core" Version="8.3.2" />
+</ItemGroup>
+<ItemGroup>
+  <None Include="..\..\LICENSE.md">
+    <Pack>True</Pack>
+    <PackagePath></PackagePath>
+  </None>
+</ItemGroup>
+  <Import Project="..\Custom.targets" />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="XCOPY /s /y &quot;$(TargetDir)$(ProjectName).*&quot; &quot;C:\Users\Heather\NAS Folders\Active Projects\Webs\BF Sites\sourcecode-BigFishBaseline\BigFish.Web\bin\&quot;&#xD;&#xA;XCOPY  /s /r /y &quot;$(SolutionDir)$(ProjectName)\App_Plugins&quot; &quot;C:\Users\Heather\NAS Folders\Active Projects\Webs\BF Sites\sourcecode-BigFishBaseline\BigFish.Web\App_Plugins&quot;" />
+  </Target>
+</Project>

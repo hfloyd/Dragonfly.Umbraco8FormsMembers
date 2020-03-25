@@ -1,0 +1,8 @@
+﻿{
+
+  javascript: [
+    '~/App_Plugins/Dragonfly.Umbraco8FormsMembers/SettingTypes/membermapper.controller.js',
+	'~/App_Plugins/Dragonfly.Umbraco8FormsMembers/memberpicker.resource.js'
+  ]
+
+}
