@@ -8,6 +8,9 @@
     using Umbraco.Web.Mvc;
     using Umbraco.Web.WebApi;
     using System.ComponentModel;
+    using System.Web.Mvc;
+    using Dragonfly.Umbraco8FormsMembers.Models;
+    using Newtonsoft.Json;
     using Umbraco.Core;
     using Umbraco.Core.Composing;
     using Umbraco.Core.Logging;
@@ -23,18 +26,6 @@
     [PluginController("Umbraco8FormsMembers")]
     public class MemberController : UmbracoAuthorizedJsonController
     {
-
-        private readonly ILogger _logger;
-
-        public MemberController()
-        {
-            _logger = Current.Logger;
-        }
-
-        public bool Test()
-        {
-            return true;
-        }
 
         public IEnumerable<PickerItem> GetAllMemberTypesWithAlias()
         {
