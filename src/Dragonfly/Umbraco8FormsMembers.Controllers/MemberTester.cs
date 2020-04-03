@@ -43,7 +43,7 @@
         // /Umbraco/Api/MemberTesterApi/TestPost
         [HttpPost]
         [Route("TestPost")]
-        public IHttpActionResult TestPost(MemberAndRecordData Data)
+        public IHttpActionResult TestPost(MemberRecordResult Data)
         {
             //var membershipHelper = new Umbraco.Web.Security.MembershipHelper(Umbraco.Web.Composing.Current);
             var memberService = Current.Services.MemberService;
@@ -81,7 +81,7 @@
         // /Umbraco/Api/MemberTesterApi/DoPost
         [HttpPost]
         [Route("DoPost")]
-        public IHttpActionResult DoPost(MemberAndRecordData Data)
+        public IHttpActionResult DoPost(MemberRecordResult Data)
         {
             var memberService = Current.Services.MemberService;
 

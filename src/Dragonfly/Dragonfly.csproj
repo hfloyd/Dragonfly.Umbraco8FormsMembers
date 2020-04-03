@@ -40,7 +40,4 @@
   </None>
 </ItemGroup>
   <Import Project="..\Custom.targets" />
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="XCOPY /s /y &quot;$(TargetDir)$(ProjectName).*&quot; &quot;C:\Users\Heather\NAS Folders\Active Projects\Webs\BF Sites\sourcecode-BigFishBaseline\BigFish.Web\bin\&quot;&#xD;&#xA;XCOPY  /s /r /y &quot;$(SolutionDir)$(ProjectName)\App_Plugins&quot; &quot;C:\Users\Heather\NAS Folders\Active Projects\Webs\BF Sites\sourcecode-BigFishBaseline\BigFish.Web\App_Plugins&quot;" />
-  </Target>
 </Project>
