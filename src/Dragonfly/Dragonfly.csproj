@@ -13,6 +13,8 @@
     <RepositoryUrl>https://github.com/hfloyd/Dragonfly.Umbraco8FormsMembers</RepositoryUrl>
     <PackageId>Dragonfly.Umbraco8FormsMembers</PackageId>
 	<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+	<Version>1.1.0</Version>
+	<PackageReleaseNotes>Fix for dependent packages</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -29,9 +31,9 @@
     </Content>
  </ItemGroup>
 <ItemGroup>
-  <PackageReference Include="UmbracoCms.Core" Version="8.5.5" />
-  <PackageReference Include="UmbracoCms.Web" Version="8.5.5" />
-  <PackageReference Include="UmbracoForms.Core" Version="8.3.2" />
+  <PackageReference Include="UmbracoCms.Core" Version="8.5.5" PrivateAssets="All" />
+  <PackageReference Include="UmbracoCms.Web" Version="8.5.5" PrivateAssets="All" />
+  <PackageReference Include="UmbracoForms.Core" Version="8.3.2" PrivateAssets="All" />
 </ItemGroup>
 <ItemGroup>
   <None Include="..\..\LICENSE.md">
